@@ -1,0 +1,101 @@
+Flight Documentation
+====================
+
+Welcome to the Flight documentation! This guide will help you understand and make the most of the training parameters in the Flight AI training program.
+
+To download the latest version of Flight, please visit the following link:
+
+`Download Flight <https://github.com/FlightMLT/Flight/releases/latest>`_
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+Quickstart Guide
+================
+
+This Quickstart guide will walk you through the basic steps to start using the Flight AI training program. Follow these steps to configure settings, add data, and train your model.
+
+1. **Adjust Training Sliders**
+
+   Customize the training settings to your needs using the sliders. Here are some key adjustments you can make:
+
+   - **Steps per Epoch**: Set this based on your dataset size. For instance:
+       - Use `5` steps for small datasets.
+       - Try `10` steps for larger datasets to ensure the model learns thoroughly.
+   - **Epochs**: Adjust the total training passes:
+       - `10` epochs for a quick test run.
+       - `100` epochs for a more comprehensive training.
+   - **Temperature**: Controls randomness in responses:
+       - A low temperature (e.g., `0.3`) for accurate, predictable outputs.
+       - A higher temperature (e.g., `2.0`) for more diverse, creative responses.
+   - **Train Size Fraction**: Set the portion of data used for training:
+       - Use `0.8` to allocate 80% of the data for training.
+       - For more testing data, set this lower, such as `0.6`.
+
+2. **Enter a Prompt**
+
+   In the **Root Text** text box, enter a starting prompt for the model. This serves as an initial text that guides the model's responses.
+
+   - For instance, if you want the model to generate responses about "climate science," you could enter "The effects of climate change include..."
+
+3. **Upload Training Data**
+
+   Use the **Upload File** button to upload your training dataset. This data will be used to help the model learn the patterns in your specific data type. Supported formats may include `.txt`, `.csv`, and other common text data formats.
+
+4. **Train the Model**
+
+   Once your settings are adjusted, the prompt is entered, and data is uploaded, click the **Train Model** button. The model will begin training based on your chosen parameters and dataset.
+
+5. **Monitor Training Progress**
+
+   The program may display a progress bar or log output to show training progress. Once completed, you can start using the trained model for predictions or further analysis.
+
+Training Parameters
+===================
+
+This section covers the key training parameters available in Flight. Adjusting these parameters helps you control the training process to achieve optimal model performance.
+
+Steps per Epoch
+---------------
+
+**Definition**: The number of batches (or steps) of data the model processes before completing an epoch.
+
+**Purpose**: Increasing steps per epoch means the model sees more data within each epoch, which can be beneficial if the dataset is large and diverse. For smaller datasets, reducing steps can prevent overfitting.
+
+**Effect on Model**:
+- Higher steps can improve learning but increase training time.
+- Lower steps can speed up training but may reduce performance if data isn't sufficiently varied.
+
+Epochs
+------
+
+**Definition**: One epoch is a complete pass through the entire training dataset.
+
+**Purpose**: This parameter determines how many times the model will see the entire dataset. Higher epoch counts may improve learning but risk overfitting if too high.
+
+**Effect on Model**:
+- A higher epoch count can improve accuracy but may lead to overfitting if unchecked.
+- Fewer epochs can prevent overfitting but may limit the model's learning.
+
+Temperature
+-----------
+
+**Definition**: A parameter that controls the randomness of predictions.
+
+**Purpose**: Temperature affects the probability distribution the model uses to generate outputs. Higher temperatures result in more varied and creative responses, while lower temperatures yield more conservative and deterministic responses.
+
+**Effect on Model**:
+- Higher temperatures make the model more creative or varied in output but may reduce coherence.
+- Lower temperatures produce consistent outputs but might lack diversity.
+
+Train Size Fraction
+-------------------
+
+**Definition**: The fraction of the dataset used for training, expressed as a percentage or decimal.
+
+**Purpose**: Adjusting the train size fraction lets you control how much data is used in training versus validation or testing.
+
+**Effect on Model**:
+- Higher train size fractions mean more data for learning, improving generalization but reducing validation/test size.
+- Lower fractions reserve more data for testing, which may better assess model performance but limit training data.
